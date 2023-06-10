@@ -15,6 +15,15 @@ get_header(); ?>
 			<p>{{description}}</p>
 			<h2 v-if="newEmployee">New Employees: Please Review Our Latest Announcements</h2>
 			<h2 v-else>Announcements:</h2>
+			<ul>
+				<li v-for="announcement in announcements">{{announcement}}</li>
+			</ul>
+			<h2>New Team Members</h2>
+			<div v-for="team in newTeam" :key="team.id">
+				<h3>{{team.name}}</h3>
+				<p class="lead">Starts: {{team.startDate}}</p>
+				<b>Favorite Song: {{team.favSong}}</b>
+			</div>
 		</div>
 
 		<?php while ( have_posts() ) : the_post(); ?>
