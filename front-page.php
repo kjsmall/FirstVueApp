@@ -16,7 +16,11 @@ get_header(); ?>
 			<h2 v-if="newEmployee">New Employees: Please Review Our Latest Announcements</h2>
 			<h2 v-else>Announcements:</h2>
 			<ul>
-				<li v-for="announcement in announcements">{{announcement}}</li>
+				<li v-for="announcement in announcements">
+					<h3>{{announcement.title}}</h3>
+					<p>{{announcement.announcement}}</p>
+					<div class="category">{{announcement.category}}</div>
+				</li>
 			</ul>
 			<h2>New Team Members</h2>
 			<div v-for="team in newTeam" :key="team.id">
